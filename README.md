@@ -1,65 +1,62 @@
-# agrega-bloques README
+# Agrega Bloques - Extensión para Firefox
 
-This is the README for your extension "agrega-bloques". After writing up a brief description, we recommend including the following sections.
+Esta extensión te permite guardar y reutilizar bloques de texto frecuentemente usados en ChatGPT y Deepseek.
 
-## Features
+## Características
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Guarda bloques de texto personalizados con nombres descriptivos
+- Inserta rápidamente los bloques guardados en los campos de texto de ChatGPT y Deepseek
+- Gestiona (añade/elimina) tus bloques de texto desde una interfaz simple
+- Funciona en las siguientes páginas:
+  - chat.openai.com (ChatGPT)
+  - deepseek.com
 
-For example if there is an image subfolder under your extension project workspace:
+## Instalación
 
-\!\[feature X\]\(images/feature-x.png\)
+### Instalación temporal (para desarrollo)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Abre Firefox y navega a `about:debugging`
+2. Haz clic en "This Firefox"
+3. Haz clic en "Load Temporary Add-on"
+4. Selecciona el archivo `manifest.json` de la extensión
 
-## Requirements
+### Instalación permanente
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+La extensión aún no está disponible en Firefox Add-ons. Próximamente estará disponible para su instalación permanente.
 
-## Extension Settings
+## Uso
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Haz clic en el ícono de la extensión en la barra de herramientas de Firefox
+2. Para guardar un nuevo bloque:
+   - Escribe o pega el texto que deseas guardar en el área de texto
+   - Dale un nombre descriptivo al bloque
+   - Haz clic en "Guardar Bloque"
+3. Para usar un bloque guardado:
+   - Abre ChatGPT o Deepseek
+   - Coloca el cursor donde deseas insertar el texto
+   - Haz clic en el ícono de la extensión
+   - Haz clic en "Insertar" junto al bloque que deseas usar
 
-For example:
+## Gestión de bloques
 
-This extension contributes the following settings:
+- Los bloques se guardan localmente en tu navegador
+- Puedes eliminar bloques haciendo clic en el botón "Eliminar" junto a cada bloque
+- Los bloques persistirán incluso después de cerrar el navegador
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Privacidad
 
-## Known Issues
+- Todos los datos se almacenan localmente en tu navegador
+- No se envía ninguna información a servidores externos
+- La extensión solo tiene acceso a las páginas de ChatGPT y Deepseek
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Desarrollo
 
-## Release Notes
+Para desarrollar la extensión:
 
-Users appreciate release notes as you update your extension.
+1. Clona este repositorio
+2. Abre Firefox y navega a `about:debugging`
+3. Haz clic en "This Firefox"
+4. Haz clic en "Load Temporary Add-on"
+5. Selecciona el archivo `manifest.json`
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Los cambios en los archivos se reflejarán al recargar la extensión en `about:debugging`.

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+    }
+    .block-item {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    #newBlock {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Bloques de Texto</h2>
+  <div>
+    <textarea id="newBlock" placeholder="Escribe un nuevo bloque de texto"></textarea>
+    <input type="text" id="blockName" placeholder="Nombre del bloque">
+    <button id="saveBlock">Guardar Bloque</button>
+  </div>
+  <div id="blocksList">
+    <!-- Los bloques se insertarán aquí dinámicamente -->
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

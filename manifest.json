@@ -1,20 +1,21 @@
 {
   "manifest_version": 2,
   "name": "Agrega Bloques",
-  "version": "1.0",
-  "description": "Extensión para insertar bloques predefinidos en campos de texto en ChatGPT y Deepseek",
+  "version": "1.1",
+  "description": "Extensión para insertar bloques predefinidos en cualquier campo de texto, similar a Grammarly o Blaze.",
   "icons": {
     "48": "icons/icon.png",
     "96": "icons/icon.png"
   },
   "background": {
-    "scripts": ["extension.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "permissions": [
     "storage",
-    "*://*.chat.openai.com/*",
-    "*://*.deepseek.com/*"
+    "contextMenus",
+    "activeTab",
+    "<all_urls>"
   ],
   "browser_action": {
     "default_icon": "icons/icon.png",
@@ -22,10 +23,7 @@
     "default_title": "Agrega Bloques"
   },
   "content_scripts": [{
-    "matches": [
-      "*://*.chat.openai.com/*",
-      "*://*.deepseek.com/*"
-    ],
+    "matches": ["<all_urls>"],
     "js": ["content_scripts/content.js"]
   }]
 }

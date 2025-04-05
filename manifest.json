@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Agrega Bloques",
+  "version": "1.0",
+  "description": "Extensión para insertar bloques predefinidos en campos de texto.",
+  "icons": {
+    "48": "icon.png"
+  },
+  "background": {
+    "scripts": ["extension.js"],
+    "persistent": false
+  },
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Agrega Bloques"
+  }
+}

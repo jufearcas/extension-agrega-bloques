@@ -6,7 +6,7 @@ if (!runtime) {
 }
 
 // Escucha mensajes del popup y del menú contextual
-runtime?.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener((message) => {
   if (message.action === 'insertText') {
     insertTextIntoField(message.text);
   }

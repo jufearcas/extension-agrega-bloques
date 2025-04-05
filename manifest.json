@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Agrega Bloques",
+  "name": "TextoFlash",
   "version": "1.1",
   "description": "Extensión para insertar bloques predefinidos en cualquier campo de texto, similar a Grammarly o Blaze.",
   "icons": {
@@ -19,7 +19,7 @@
   "browser_action": {
     "default_icon": "icons/icon.png",
     "default_popup": "popup/popup.html",
-    "default_title": "Agrega Bloques"
+    "default_title": "TextoFlash"
   },
   "content_scripts": [{
     "matches": ["*://*/*"],

@@ -1,4 +1,4 @@
-# Extensión para Insertar Bloques de Texto Predefinidos
+# TextoFlash
 
 ## Descripción corta
 Agiliza tu escritura con bloques de texto predefinidos. Inserta frases o plantillas en cualquier campo de texto con un clic, ideal para productividad y eficiencia.

@@ -1,6 +1,6 @@
 {
   "name": "agrega-bloques",
-  "displayName": "Agrega Bloques",
+  "displayName": "TextoFlash",
   "description": "Extensión para insertar bloques predefinidos en campos de texto",
   "version": "0.0.1",
   "engines": {

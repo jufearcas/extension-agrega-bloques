@@ -1,5 +1,11 @@
-// Escucha mensajes del popup
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+// Polyfill for browser compatibility
+const runtime = (typeof browser !== 'undefined' && browser.runtime) || (typeof chrome !== 'undefined' && chrome.runtime);
+
+if (!runtime) {
+  console.error('No compatible runtime found. Ensure the extension is running in a supported browser.');
+}
+
+runtime?.onMessage.addListener((message) => {
   if (message.action === 'insertText') {
     insertTextIntoField(message.text);
   }
@@ -41,26 +47,29 @@ function insertTextIntoField(text) {
   const tagName = textField.tagName.toLowerCase();
   const isInput = tagName === 'input';
   const isTextarea = tagName === 'textarea';
-  const isContentEditable = textField.isContentEditable;
+  const isContentEditable = textField.hasAttribute('contenteditable');
 
   if (isInput || isTextarea) {
-    const startPos = textField.selectionStart || 0;
-    const endPos = textField.selectionEnd || 0;
-    const currentText = textField.value;
+    const inputField = textField;
+    const startPos = inputField.selectionStart || 0;
+    const endPos = inputField.selectionEnd || 0;
+    const currentText = inputField.value;
 
     // Inserta el nuevo texto
-    textField.value = currentText.substring(0, startPos) + 
+    inputField.value = currentText.substring(0, startPos) + 
                      text + 
                      currentText.substring(endPos);
 
     // Actualiza la posición del cursor
     const newCursorPos = startPos + text.length;
-    textField.setSelectionRange(newCursorPos, newCursorPos);
+    inputField.setSelectionRange(newCursorPos, newCursorPos);
   } else if (isContentEditable) {
-    const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-    range.deleteContents();
-    range.insertNode(document.createTextNode(text));
+    const selection = window?.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      range.deleteContents();
+      range.insertNode(document?.createTextNode(text));
+    }
   } else {
     console.error('El campo de texto encontrado no es compatible para insertar texto.');
     return;
